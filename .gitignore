@@ -1,1 +1,4 @@
 env/
+encryption_key.json
+.envrc
+funztionz.db

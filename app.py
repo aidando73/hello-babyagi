@@ -1,10 +1,15 @@
 import babyagi
 
-@babyagi.register_function()
+@babyagi.register_function(
+        metadata={"description": "This is a function that returns the string 'world'."}
+)
 def world():
     return "world"
 
-@babyagi.register_function(dependencies=["world"])
+@babyagi.register_function(
+        metadata={"description": "This is a function that returns the string 'hello' and the result of the world function."},
+        dependencies=["world"]
+)
 def hello_world():
     x = world()
     return f"hello {x}"
